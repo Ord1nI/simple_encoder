@@ -38,6 +38,7 @@ vector zip(char* r) {
                 default:
                     abort();
             }
+
             r++;
         }
         vector_push_back(&vec, &i);
