@@ -1,5 +1,6 @@
-#include "/Users/notebook/programming/c/myclib/vector/vector.h"
-#include "/Users/notebook/programming/c/myclib/string/mystring.h"
+#include "./myclib/vector/vector.h"
+#include "./myclib/string/mystring.h"
+
 #include <stdio.h>
 #include <limits.h>
 
@@ -59,19 +60,19 @@ string unzip(vector* vec) {
         while (num_to_shift >= 0) {
             switch(el>>num_to_shift) {
                 case 1:
-                    putchar('a');
+                    /* putchar('a'); */
                     string_push_back(&str,'a');
                     break;
                 case 2:
-                    putchar('b');
+                    /* putchar('b'); */
                     string_push_back(&str,'b');
                     break;
                 case 3:
-                    putchar('c');
+                    /* putchar('c'); */
                     string_push_back(&str,'c');
                     break;
                 case 0:
-                    putchar('\n');
+                    /* putchar('\n'); */
                     return str;
                 default:
                     abort();
@@ -85,14 +86,16 @@ string unzip(vector* vec) {
 }
 
 int main() {
-    char* a = "cccccccccccccccccccccccccccccccc";
+    char* a = "ccccccccccccccccccccccccccccccccc";
     vector vec = zip(a);
     string str = unzip(&vec);
     puts(str.str);
+
     for (size_t i = 0; i < vec.length; i++) {
         unsigned int num = *(unsigned int*)vector_pos(&vec, i);
         print_binary(num);
     }
+
     string_destroy(&str);
     vector_destroy(&vec);
 }
