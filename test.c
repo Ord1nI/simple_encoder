@@ -60,19 +60,15 @@ string unzip(vector* vec) {
         while (num_to_shift >= 0) {
             switch(el>>num_to_shift) {
                 case 1:
-                    /* putchar('a'); */
                     string_push_back(&str,'a');
                     break;
                 case 2:
-                    /* putchar('b'); */
                     string_push_back(&str,'b');
                     break;
                 case 3:
-                    /* putchar('c'); */
                     string_push_back(&str,'c');
                     break;
                 case 0:
-                    /* putchar('\n'); */
                     return str;
                 default:
                     abort();
